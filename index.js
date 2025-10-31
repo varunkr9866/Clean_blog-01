@@ -14,6 +14,12 @@
 
 // METHOD-2
 const http = require('http');
+const fs = require('fs');
+
+const hompage =fs.readFileSync('index.html');
+const aboutPage =fs.readFileSync('about.html');
+const contentPage =fs.readFileSync('content.html');
+const notFoundPage =fs.readFileSync('notFound.html');
 
 let server = http.createServer((req,res) =>{
     if (req.url === '/about' ) {
