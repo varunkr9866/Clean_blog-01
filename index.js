@@ -11,3 +11,8 @@
 //     console.log('Server is running at port 3300');
     
 // })
+
+// METHOD-2
+const http = require('http');
+
+
