@@ -1,11 +1,13 @@
-const http = require('http');
+//METHOD-1
 
-const server = http.createServer((req,res) =>{
-    console.log(req.url);
-    res.end("Hello Node.js")
-});
+// const http = require('http');
 
-server.listen(3300,()=>{
-    console.log('Server is running at port 3300');
+// const server = http.createServer((req,res) =>{
+//     console.log(req.url);
+//     res.end("Hello Node.js")
+// });
+
+// server.listen(3300,()=>{
+//     console.log('Server is running at port 3300');
     
-})
+// })
