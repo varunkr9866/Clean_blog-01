@@ -66,3 +66,4 @@ app.get('/about',(req,res) =>{
 app.get('/content',(req,res) =>{
     res.sendFile(path.resolve(__dirname,'content.html'))
 });
+
