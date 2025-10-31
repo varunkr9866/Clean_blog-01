@@ -23,17 +23,17 @@ const notFoundPage =fs.readFileSync('notFound.html');
 
 let server = http.createServer((req,res) =>{
     if (req.url === '/about' ) {
-        res.end('About Page');
+        res.end(hompage);
         
     }
      else if (req.url === '/content' ) {
-        res.end('the Content Page');
+        res.end(aboutPage);
     } 
     else if (req.url === '/' ) {
-        res.end('the Home Page');
+        res.end(contentPage);
     } else {
         res.writeHead(404)
-        res.end('Page Not Found');
+        res.end(notFoundPage);
     } 
 });
 
