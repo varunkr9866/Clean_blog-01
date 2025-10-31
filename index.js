@@ -45,24 +45,24 @@
 
 // METHOD-3
 
-const express = require('express');
-const { log } = require('node:console');
+const express = require('express')
+const path = require('path')
 
-const app = express();
+const app = express()
 
 app.listen(3300,() =>{
     console.log("app listening in port 3200");
     
-})
+});
 
 app.get('/',(req,res) =>{
-    res.json({name:'Varun'})
-})
+    res.sendFile(path.resolve(__dirname,'index.html'))
+});
 
 app.get('/about',(req,res) =>{
-    res.json({name:'Welcome to about page'})
-})
+    res.sendFile(path.resolve(__dirname,'about.html'))
+});
 
 app.get('/content',(req,res) =>{
-    res.json({name:'Welcome to content page'})
-})
+    res.sendFile(path.resolve(__dirname,'content.html'))
+});
