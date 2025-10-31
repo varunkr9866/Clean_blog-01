@@ -13,31 +13,56 @@
 // })
 
 // METHOD-2
-const http = require('http');
-const fs = require('fs');
 
-const hompage =fs.readFileSync('index.html');
-const aboutPage =fs.readFileSync('about.html');
-const contentPage =fs.readFileSync('content.html');
-const notFoundPage =fs.readFileSync('notFound.html');
+// const http = require('http');
+// const fs = require('fs');
 
-let server = http.createServer((req,res) =>{
-    if (req.url === '/about' ) {
-        res.end(hompage);
+// const hompage =fs.readFileSync('index.html');
+// const aboutPage =fs.readFileSync('about.html');
+// const contentPage =fs.readFileSync('content.html');
+// const notFoundPage =fs.readFileSync('notFound.html');
+
+// let server = http.createServer((req,res) =>{
+//     if (req.url === '/about' ) {
+//         res.end(hompage);
         
-    }
-     else if (req.url === '/content' ) {
-        res.end(aboutPage);
-    } 
-    else if (req.url === '/' ) {
-        res.end(contentPage);
-    } else {
-        res.writeHead(404)
-        res.end(notFoundPage);
-    } 
-});
+//     }
+//      else if (req.url === '/content' ) {
+//         res.end(aboutPage);
+//     } 
+//     else if (req.url === '/' ) {
+//         res.end(contentPage);
+//     } else {
+//         res.writeHead(404)
+//         res.end(notFoundPage);
+//     } 
+// });
 
- server.listen(3300,()=>{
-    console.log('Application is running in port number 3300');
+//  server.listen(3300,()=>{
+//     console.log('Application is running in port number 3300');
     
-});
+// });
+
+// METHOD-3
+
+const express = require('express');
+const { log } = require('node:console');
+
+const app = express();
+
+app.listen(3300,() =>{
+    console.log("app listening in port 3200");
+    
+})
+
+app.get('/',(req,res) =>{
+    res.json({name:'Varun'})
+})
+
+app.get('/about',(req,res) =>{
+    res.json({name:'Welcome to about page'})
+})
+
+app.get('/content',(req,res) =>{
+    res.json({name:'Welcome to content page'})
+})
